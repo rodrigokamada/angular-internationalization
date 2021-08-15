@@ -1,27 +1,210 @@
-# AngularInternationalization
+# Angular Internationalization (i18n)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
 
-## Development server
+Application example built with [Angular 12](https://angular.io/) and adding the internationalization (i18n) component using the [@ngx-translate/core](https://www.npmjs.com/package/@ngx-translate/core) library.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This post was made on my [blog]() in portuguese and on the [DEV Community]().
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+[![Website](https://shields.braskam.com/v1/shields?name=website&format=rectangle&size=small)](https://rodrigo.kamada.com.br)
+[![LinkedIn](https://shields.braskam.com/v1/shields?name=linkedin&format=rectangle&size=small)](https://www.linkedin.com/in/rodrigokamada)
+[![Twitter](https://shields.braskam.com/v1/shields?name=twitter&format=rectangle&size=small&socialAccount=rodrigokamada)](https://twitter.com/rodrigokamada)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Prerequisites
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Before you start, you need to install and configure the tools:
 
-## Further help
+* [git](https://git-scm.com/)
+* [Node.js and npm](https://nodejs.org/)
+* [Angular CLI](https://angular.io/cli)
+* IDE (e.g. [Visual Studio Code](https://code.visualstudio.com/))
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## Getting started
+
+
+### Create the Angular application
+
+
+**1.** Let's create the application with the Angular base structure using the `@angular/cli` with the route file and the SCSS style format.
+
+```shell
+ng new angular-internationalization
+? Would you like to add Angular routing? Yes
+? Which stylesheet format would you like to use? SCSS   [ https://sass-lang.com/documentation/syntax#scss                ]
+CREATE angular-internationalization/README.md (1073 bytes)
+CREATE angular-internationalization/.editorconfig (274 bytes)
+CREATE angular-internationalization/.gitignore (604 bytes)
+CREATE angular-internationalization/angular.json (3339 bytes)
+CREATE angular-internationalization/package.json (1090 bytes)
+CREATE angular-internationalization/tsconfig.json (783 bytes)
+CREATE angular-internationalization/.browserslistrc (703 bytes)
+CREATE angular-internationalization/karma.conf.js (1445 bytes)
+CREATE angular-internationalization/tsconfig.app.json (287 bytes)
+CREATE angular-internationalization/tsconfig.spec.json (333 bytes)
+CREATE angular-internationalization/src/favicon.ico (948 bytes)
+CREATE angular-internationalization/src/index.html (313 bytes)
+CREATE angular-internationalization/src/main.ts (372 bytes)
+CREATE angular-internationalization/src/polyfills.ts (2820 bytes)
+CREATE angular-internationalization/src/styles.scss (80 bytes)
+CREATE angular-internationalization/src/test.ts (788 bytes)
+CREATE angular-internationalization/src/assets/.gitkeep (0 bytes)
+CREATE angular-internationalization/src/environments/environment.prod.ts (51 bytes)
+CREATE angular-internationalization/src/environments/environment.ts (658 bytes)
+CREATE angular-internationalization/src/app/app-routing.module.ts (245 bytes)
+CREATE angular-internationalization/src/app/app.module.ts (393 bytes)
+CREATE angular-internationalization/src/app/app.component.scss (0 bytes)
+CREATE angular-internationalization/src/app/app.component.html (24617 bytes)
+CREATE angular-internationalization/src/app/app.component.spec.ts (1139 bytes)
+CREATE angular-internationalization/src/app/app.component.ts (233 bytes)
+✔ Packages installed successfully.
+```
+
+**2.** Install and configure the Bootstrap CSS framework. Do steps 2 and 3 of the post *[Adding the Bootstrap CSS framework to an Angular application](https://dev.to/rodrigokamada/adding-the-bootstrap-css-framework-to-an-angular-application-2k40)*.
+
+**3.** Install the `@ngx-translate/core` and `@ngx-translate/http-loader` libraries.
+
+```shell
+npm install @ngx-translate/core @ngx-translate/http-loader
+```
+
+**4.** Import the `HttpClient`, `HttpClientModule`, `TranslateModule`, `TranslateLoader` and `TranslateHttpLoader` modules. Change the `app.module.ts` file and add the lines as below.
+
+```typescript
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
+
+imports: [
+  BrowserModule,
+  HttpClientModule,
+  TranslateModule.forRoot({
+    loader: {
+      provide: TranslateLoader,
+      useFactory: (createTranslateLoader),
+      deps: [HttpClient],
+    },
+    defaultLanguage: 'en-US',
+  }),
+  AppRoutingModule,
+],
+```
+
+**5.** Create the `en-US.json` and `pt-BR.json` files in the `src/assets/i18n` folder.
+
+**6.** Add the content below in the `en-US.json` file.
+
+```json
+{
+  "hello": "Hello, {{name}}!"
+}
+```
+
+**7.** Add the content below in the `pt-BR.json` file.
+
+```json
+{
+  "hello": "Olá, {{name}}!"
+}
+```
+
+**8.** Remove the contents of the `AppComponent` class from the `src/app/app.component.ts` file. Import the `TranslateService` service and create the `changeLanguage` methods as below.
+
+```typescript
+import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
+})
+export class AppComponent {
+
+  constructor(public translateService: TranslateService) {
+  }
+
+  public changeLanguage(language: string): void {
+    this.translateService.use(language);
+  }
+
+}
+```
+
+**9.** Remove the contents of the `src/app/app.component.html` file. Add the buttons as below.
+
+```html
+<div class="container-fluid py-3">
+  <h1>Angular Internationalization (i18n)</h1>
+
+  <div class="btn-group btn-group-sm py-5">
+    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="changeLanguage('en-US')" [class.active]="translateService.currentLang !== 'pt-BR'">English</button>
+    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="changeLanguage('pt-BR')" [class.active]="translateService.currentLang === 'pt-BR'">Português</button>
+  </div>
+
+  <h3>{{ "hello" | translate: { name: "Angular" } }}</h3>
+</div>
+```
+
+**10.** Run the application with the command below.
+
+```shell
+npm start
+
+> angular-internationalization@1.0.0 start
+> ng serve
+
+✔ Browser application bundle generation complete.
+
+Initial Chunk Files | Names         |      Size
+vendor.js           | vendor        |   2.57 MB
+styles.css          | styles        | 266.58 kB
+polyfills.js        | polyfills     | 128.54 kB
+scripts.js          | scripts       |  76.67 kB
+main.js             | main          |  13.03 kB
+runtime.js          | runtime       |   6.66 kB
+
+                    | Initial Total |   3.05 MB
+
+Build at: 2021-08-15T20:12:53.818Z - Hash: 9462fdcfd1de35681ab4 - Time: 11933ms
+
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+
+
+✔ Compiled successfully.
+```
+
+**11.** Ready! Access the URL `http://localhost:4200/` and check if the application is working. See the application working on [GitHub Pages](https://rodrigokamada.github.io/angular-internationalization/) and [Stackblitz](https://stackblitz.com/edit/angular12-internationalization).
+
+![Angular Internationalization](docs/images/angular-internationalization.png)
+
+
+
+## Cloning the application
+
+**1.** Clone the repository.
+
+```shell
+git clone git@github.com:rodrigokamada/angular-internationalization.git
+```
+
+**2.** Install the dependencies.
+
+```shell
+npm ci
+```
+
+**3.** Run the application.
+
+```shell
+npm start
+```
