@@ -3,7 +3,7 @@
 
 Application example built with [Angular 12](https://angular.io/) and adding the internationalization (i18n) component using the [@ngx-translate/core](https://www.npmjs.com/package/@ngx-translate/core) library.
 
-This tutorial was posted on my [blog](https://rodrigo.kamada.com.br/blog/adicionando-o-componente-de-internacionalizacao-i18n-em-uma-aplicacao-angular) in portuguese and on the [DEV Community](https://dev.to/rodrigokamada/adding-the-internationalization-i18n-component-to-an-angular-application-4pac).
+This tutorial was posted on my [blog](https://rodrigo.kamada.com.br/blog/adicionando-o-componente-de-internacionalizacao-i18n-em-uma-aplicacao-angular) in portuguese and on the [DEV Community](https://dev.to/rodrigokamada/adding-the-internationalization-i18n-component-to-an-angular-application-4pac) in english.
 
 
 
