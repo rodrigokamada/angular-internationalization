@@ -3,7 +3,7 @@
 
 Application example built with [Angular 12](https://angular.io/) and adding the internationalization (i18n) component using the [@ngx-translate/core](https://www.npmjs.com/package/@ngx-translate/core) library.
 
-This post was made on my [blog](https://rodrigo.kamada.com.br/blog/adicionando-o-componente-de-internacionalizacao-i18n-em-uma-aplicacao-angular) in portuguese and on the [DEV Community](https://dev.to/rodrigokamada/adding-the-internationalization-i18n-component-to-an-angular-application-4pac).
+This tutorial was posted on my [blog](https://rodrigo.kamada.com.br/blog/adicionando-o-componente-de-internacionalizacao-i18n-em-uma-aplicacao-angular) in portuguese and on the [DEV Community](https://dev.to/rodrigokamada/adding-the-internationalization-i18n-component-to-an-angular-application-4pac).
 
 
 
@@ -65,7 +65,7 @@ CREATE angular-internationalization/src/app/app.component.ts (233 bytes)
 ✔ Packages installed successfully.
 ```
 
-**2.** Install and configure the Bootstrap CSS framework. Do steps 2 and 3 of the post *[Adding the Bootstrap CSS framework to an Angular application](https://dev.to/rodrigokamada/adding-the-bootstrap-css-framework-to-an-angular-application-2k40)*.
+**2.** Install and configure the Bootstrap CSS framework. Do steps 2 and 3 of the post *[Adding the Bootstrap CSS framework to an Angular application](https://github.com/rodrigokamada/angular-bootstrap)*.
 
 **3.** Install the `@ngx-translate/core` and `@ngx-translate/http-loader` libraries.
 
