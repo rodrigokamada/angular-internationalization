@@ -2,7 +2,10 @@
   <h1>Angular Internationalization (i18n)</h1>
 
   <div class="btn-group btn-group-sm py-5">
-    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="changeLanguage('en-US')" [class.active]="translateService.currentLang !== 'pt-BR'">English</button>
+    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="changeLanguage('de-DE')" [class.active]="translateService.currentLang === 'de-DE'">Deutschland</button>
+    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="changeLanguage('en-US')" [class.active]="!translateService.currentLang || translateService.currentLang === 'en-US'">English</button>
+    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="changeLanguage('es-ES')" [class.active]="translateService.currentLang === 'es-ES'">Español</button>
+    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="changeLanguage('fr-FR')" [class.active]="translateService.currentLang === 'fr-FR'">Francés</button>
     <button type="button" class="btn btn-sm btn-outline-secondary" (click)="changeLanguage('pt-BR')" [class.active]="translateService.currentLang === 'pt-BR'">Português</button>
   </div>
 

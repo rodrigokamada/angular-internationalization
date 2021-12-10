@@ -99,9 +99,17 @@ imports: [
 ],
 ```
 
-**5.** Create the `en-US.json` and `pt-BR.json` files in the `src/assets/i18n` folder.
+**5.** Create the `de-DE.json`, `en-US.json`, `es-ES.json`, `fr-FR.json` and `pt-BR.json` files in the `src/assets/i18n` folder.
 
-**6.** Add the content below in the `en-US.json` file.
+**6.** Add the content below in the `de-DE.json` file.
+
+```json
+{
+  "hello": "Hallo, {{name}}!"
+}
+```
+
+**7.** Add the content below in the `en-US.json` file.
 
 ```json
 {
@@ -109,7 +117,23 @@ imports: [
 }
 ```
 
-**7.** Add the content below in the `pt-BR.json` file.
+**8.** Add the content below in the `es-ES.json` file.
+
+```json
+{
+  "hello": "Hola, {{name}}!"
+}
+```
+
+**9.** Add the content below in the `fr-FR.json` file.
+
+```json
+{
+  "hello": "Bonjour, {{name}}!"
+}
+```
+
+**10.** Add the content below in the `pt-BR.json` file.
 
 ```json
 {
@@ -117,7 +141,7 @@ imports: [
 }
 ```
 
-**8.** Remove the contents of the `AppComponent` class from the `src/app/app.component.ts` file. Import the `TranslateService` service and create the `changeLanguage` methods as below.
+**11.** Remove the contents of the `AppComponent` class from the `src/app/app.component.ts` file. Import the `TranslateService` service and create the `changeLanguage` methods as below.
 
 ```typescript
 import { Component } from '@angular/core';
@@ -140,14 +164,17 @@ export class AppComponent {
 }
 ```
 
-**9.** Remove the contents of the `src/app/app.component.html` file. Add the buttons as below.
+**12.** Remove the contents of the `src/app/app.component.html` file. Add the buttons as below.
 
 ```html
 <div class="container-fluid py-3">
   <h1>Angular Internationalization (i18n)</h1>
 
   <div class="btn-group btn-group-sm py-5">
-    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="changeLanguage('en-US')" [class.active]="translateService.currentLang !== 'pt-BR'">English</button>
+    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="changeLanguage('de-DE')" [class.active]="translateService.currentLang === 'de-DE'">Deutschland</button>
+    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="changeLanguage('en-US')" [class.active]="!translateService.currentLang || translateService.currentLang === 'en-US'">English</button>
+    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="changeLanguage('es-ES')" [class.active]="translateService.currentLang === 'es-ES'">Español</button>
+    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="changeLanguage('fr-FR')" [class.active]="translateService.currentLang === 'fr-FR'">Francés</button>
     <button type="button" class="btn btn-sm btn-outline-secondary" (click)="changeLanguage('pt-BR')" [class.active]="translateService.currentLang === 'pt-BR'">Português</button>
   </div>
 
@@ -155,7 +182,7 @@ export class AppComponent {
 </div>
 ```
 
-**10.** Run the application with the command below.
+**13.** Run the application with the command below.
 
 ```shell
 npm start
@@ -183,9 +210,9 @@ Build at: 2021-08-15T20:12:53.818Z - Hash: 9462fdcfd1de35681ab4 - Time: 11933ms
 ✔ Compiled successfully.
 ```
 
-**11.** Ready! Access the URL `http://localhost:4200/` and check if the application is working. See the application working on [GitHub Pages](https://rodrigokamada.github.io/angular-internationalization/) and [Stackblitz](https://stackblitz.com/edit/angular13-internationalization).
+**14.** Ready! Access the URL `http://localhost:4200/` and check if the application is working. See the application working on [GitHub Pages](https://rodrigokamada.github.io/angular-internationalization/) and [Stackblitz](https://stackblitz.com/edit/angular13-internationalization).
 
-![Angular Internationalization](docs/images/angular-internationalization.png)
+![Angular Internationalization](https://res.cloudinary.com/rodrigokamada/image/upload/v1637432283/Blog/angular-internationalization/angular-internationalization.png)
 
 
 
