@@ -1,15 +1,15 @@
 # Angular Internationalization (i18n)
 
 
-Application example built with [Angular 13](https://angular.io/) and adding the internationalization (i18n) component using the [@ngx-translate/core](https://www.npmjs.com/package/@ngx-translate/core) library.
+Application example built with [Angular](https://angular.io/) 13 and adding the internationalization (i18n) component using the [@ngx-translate/core](https://www.npmjs.com/package/@ngx-translate/core) library.
 
 This tutorial was posted on my [blog](https://rodrigo.kamada.com.br/blog/adicionando-o-componente-de-internacionalizacao-i18n-em-uma-aplicacao-angular) in portuguese and on the [DEV Community](https://dev.to/rodrigokamada/adding-the-internationalization-i18n-component-to-an-angular-application-4pac) in english.
 
 
 
-[![Website](https://shields.braskam.com/v1/shields?name=website&format=rectangle&size=small)](https://rodrigo.kamada.com.br)
-[![LinkedIn](https://shields.braskam.com/v1/shields?name=linkedin&format=rectangle&size=small)](https://www.linkedin.com/in/rodrigokamada)
-[![Twitter](https://shields.braskam.com/v1/shields?name=twitter&format=rectangle&size=small&socialAccount=rodrigokamada)](https://twitter.com/rodrigokamada)
+[![Website](https://shields.braskam.com/v1/shields?name=website&format=rectangle&size=small&radius=5)](https://rodrigo.kamada.com.br)
+[![LinkedIn](https://shields.braskam.com/v1/shields?name=linkedin&format=rectangle&size=small&radius=5)](https://www.linkedin.com/in/rodrigokamada)
+[![Twitter](https://shields.braskam.com/v1/shields?name=twitter&format=rectangle&size=small&radius=5&socialAccount=rodrigokamada)](https://twitter.com/rodrigokamada)
 
 
 
@@ -183,7 +183,7 @@ Build at: 2021-08-15T20:12:53.818Z - Hash: 9462fdcfd1de35681ab4 - Time: 11933ms
 ✔ Compiled successfully.
 ```
 
-**11.** Ready! Access the URL `http://localhost:4200/` and check if the application is working. See the application working on [GitHub Pages](https://rodrigokamada.github.io/angular-internationalization/) and [Stackblitz](https://stackblitz.com/edit/angular12-internationalization).
+**11.** Ready! Access the URL `http://localhost:4200/` and check if the application is working. See the application working on [GitHub Pages](https://rodrigokamada.github.io/angular-internationalization/) and [Stackblitz](https://stackblitz.com/edit/angular13-internationalization).
 
 ![Angular Internationalization](docs/images/angular-internationalization.png)
 
