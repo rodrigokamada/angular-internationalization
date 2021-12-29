@@ -141,7 +141,7 @@ imports: [
 }
 ```
 
-**11.** Remove the contents of the `AppComponent` class from the `src/app/app.component.ts` file. Import the `TranslateService` service and create the `changeLanguage` methods as below.
+**11.** Remove the contents of the `AppComponent` class from the `src/app/app.component.ts` file. Import the `TranslateService` service and create the `changeLanguage` method as below.
 
 ```typescript
 import { Component } from '@angular/core';
