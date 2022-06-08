@@ -28,7 +28,8 @@ export function createTranslateLoader(http: HttpClient) {
     }),
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [
     AppComponent,
   ],
