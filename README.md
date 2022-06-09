@@ -210,7 +210,7 @@ Build at: 2021-08-15T20:12:53.818Z - Hash: 9462fdcfd1de35681ab4 - Time: 11933ms
 ✔ Compiled successfully.
 ```
 
-**14.** Ready! Access the URL `http://localhost:4200/` and check if the application is working. See the application working on [GitHub Pages](https://rodrigokamada.github.io/angular-internationalization/) and [Stackblitz](https://stackblitz.com/edit/angular13-internationalization).
+**14.** Ready! Access the URL `http://localhost:4200/` and check if the application is working. See the application working on [GitHub Pages](https://rodrigokamada.github.io/angular-internationalization/) and [Stackblitz](https://stackblitz.com/edit/angular14-internationalization).
 
 ![Angular Internationalization](https://res.cloudinary.com/rodrigokamada/image/upload/v1639156375/Blog/angular-internationalization/angular-internationalization.png)
 
